@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customize your card — Card Studio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="brand-mark"></span>Card Studio</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="customize.html" class="active">Customize</a></li>
+    <li><a href="order.html">Order</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+</nav>
+
+<main class="container builder">
+  <div>
+    <h1 style="margin-bottom:6px;">Design your card</h1>
+    <p style="color:var(--steel); margin-bottom: 26px;">Every choice updates the preview on the right. When you're happy with it, continue to order.</p>
+
+    <div class="panel">
+      <h2>Template</h2>
+      <p class="hint">Sets the card network label shown on your card.</p>
+      <div class="option-row" id="template-options"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Color</h2>
+      <p class="hint">Pick the base color of your card.</p>
+      <div class="swatch-row" id="color-options"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Pattern</h2>
+      <p class="hint">A subtle texture layered over the color.</p>
+      <div class="option-row" id="pattern-options"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Name on card</h2>
+      <p class="hint">Your name or initials, as they'll appear on the card.</p>
+      <div class="field">
+        <label for="card-name-input">Name / initials</label>
+        <input type="text" id="card-name-input" maxlength="26" placeholder="e.g. A. MORGAN">
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Photo (optional)</h2>
+      <p class="hint">Add a small image accent to the corner of your card.</p>
+      <label class="upload-drop" id="upload-drop">
+        <span id="upload-label">Click to choose an image (PNG or JPG, under 3MB)</span>
+        <input type="file" id="image-input" accept="image/png, image/jpeg">
+      </label>
+    </div>
+  </div>
+
+  <div class="preview-col">
+    <div class="preview-stage">
+      <div class="card-visual tilt" id="preview-card" style="background: linear-gradient(135deg, #0E1526, #1F2C4C);">
+        <div class="pattern-layer pattern-none" id="preview-pattern"></div>
+        <div class="chip"></div>
+        <div class="card-number">•••• •••• •••• 4821</div>
+        <div class="card-bottom">
+          <span class="card-name" id="preview-name">YOUR NAME</span>
+          <span class="card-network" id="preview-network">VISA</span>
+        </div>
+        <img id="preview-image" class="art-layer" style="display:none;">
+      </div>
+    </div>
+    <div class="preview-summary">
+      <dl>
+        <dt>Template</dt><dd id="summary-template">Classic</dd>
+        <dt>Color</dt><dd id="summary-color">Midnight</dd>
+        <dt>Pattern</dt><dd id="summary-pattern">Plain</dd>
+      </dl>
+    </div>
+    <div style="margin-top:16px;">
+      <a href="order.html" class="btn btn-primary btn-block" id="continue-btn">Continue to order</a>
+    </div>
+  </div>
+</main>
+
+<footer>Card Studio — a card design & customization system.</footer>
+
+<script src="js/card-options.js"></script>
+<script src="js/customize.js"></script>
+</body>
+</html>

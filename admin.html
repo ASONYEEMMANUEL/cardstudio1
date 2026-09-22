@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Card Studio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="login-view">
+  <nav class="site-nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span>Card Studio</a>
+  </nav>
+  <div class="login-box">
+    <h2>Admin sign-in</h2>
+    <p>Enter the admin passcode to view orders.</p>
+    <div class="field" style="text-align:left;">
+      <input type="password" id="passcode-input" placeholder="Passcode">
+    </div>
+    <button class="btn btn-primary btn-block" id="login-btn">Enter</button>
+    <p id="login-error" style="color:var(--danger); display:none; margin-top:12px; font-size:.85rem;">Incorrect passcode.</p>
+  </div>
+</div>
+
+<div id="admin-view" style="display:none;">
+  <div class="admin-topbar">
+    <a href="index.html" class="brand"><span class="brand-mark"></span>Card Studio Admin</a>
+    <button class="btn btn-outline" id="logout-btn">Log out</button>
+  </div>
+
+  <div class="admin-wrap">
+    <div class="admin-stats" id="admin-stats"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Contact</th>
+            <th>Design</th>
+            <th>Image</th>
+            <th>Order date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="orders-body">
+          <tr><td colspan="6" class="empty-state">Loading orders…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="js/card-options.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

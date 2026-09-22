@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Place your order — Card Studio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="brand-mark"></span>Card Studio</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="order.html" class="active">Order</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+</nav>
+
+<main class="container order-wrap">
+  <div>
+    <h1 style="margin-bottom:6px;">Place your order</h1>
+    <p style="color:var(--steel); margin-bottom: 22px;">Confirm your design and tell us where to reach you.</p>
+
+    <div class="status-banner" id="status-banner"></div>
+
+    <form class="panel" id="order-form">
+      <div class="field">
+        <label for="full-name">Full name</label>
+        <input type="text" id="full-name" required placeholder="Jordan Ade">
+      </div>
+      <div class="field">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" required placeholder="080X XXX XXXX">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@example.com">
+      </div>
+      <button type="submit" class="btn btn-gold btn-block" id="submit-btn">Submit order</button>
+    </form>
+  </div>
+
+  <div>
+    <div class="panel" id="design-summary-panel">
+      <h2>Your design</h2>
+      <div class="preview-stage" style="padding:24px 10px;">
+        <div class="card-visual tilt" id="preview-card" style="transform: rotate(-6deg) scale(.85);">
+          <div class="pattern-layer" id="preview-pattern"></div>
+          <div class="chip"></div>
+          <div class="card-number">•••• •••• •••• 4821</div>
+          <div class="card-bottom">
+            <span class="card-name" id="preview-name">YOUR NAME</span>
+            <span class="card-network" id="preview-network">VISA</span>
+          </div>
+          <img id="preview-image" class="art-layer" style="display:none;">
+        </div>
+      </div>
+      <dl style="margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-size:.9rem;">
+        <dt style="color:var(--steel);">Template</dt><dd id="summary-template" style="margin:0; font-weight:600; text-align:right;">—</dd>
+        <dt style="color:var(--steel);">Color</dt><dd id="summary-color" style="margin:0; font-weight:600; text-align:right;">—</dd>
+        <dt style="color:var(--steel);">Pattern</dt><dd id="summary-pattern" style="margin:0; font-weight:600; text-align:right;">—</dd>
+      </dl>
+      <a href="customize.html" class="btn btn-outline btn-block" style="margin-top:16px;">Edit design</a>
+    </div>
+  </div>
+</main>
+
+<footer>Card Studio — a card design & customization system.</footer>
+
+<script src="js/card-options.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>
